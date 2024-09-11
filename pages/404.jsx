@@ -14,7 +14,7 @@ function Custom404({ page }) {
 export default Custom404
 
 export async function getStaticProps({ params }) {
-	const page = await filer.getItem('404.md', { folder: 'pages' });
+	const page = await filer.getItem('404.mdx', { folder: 'pages' });
 	return {
 		props: {
 			page: JSON.parse(JSON.stringify(page))

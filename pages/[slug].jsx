@@ -27,7 +27,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-	const page = await filer.getItem(`${params.slug}.md`, { folder: 'pages' });
+	const page = await filer.getItem(`${params.slug}.mdx`, { folder: 'pages' });
 
 	return {
 		props: {

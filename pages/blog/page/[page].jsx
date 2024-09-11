@@ -15,7 +15,7 @@ function BlogPages({ page, posts, pageNo, pageSlug }) {
 export default BlogPages
 
 export async function getStaticPaths() {
-  const page = await filer.getItem('blog.md', { folder: 'pages' });
+  const page = await filer.getItem('blog.mdx', { folder: 'pages' });
   const paginatedPosts = await filer.getPaginatedItems('posts', {
     excerpt: true,
     sortKey: 'date',
@@ -38,7 +38,7 @@ export async function getStaticPaths() {
   };
 }
 export async function getStaticProps({ params }) {
-  const page = await filer.getItem('blog.md', { folder: 'pages' });
+  const page = await filer.getItem('blog.mdx', { folder: 'pages' });
   const paginatedPosts = await filer.getPaginatedItems('posts', { sortKey: 'date', pagination: { size: page.data?.pagination?.size || 9, page: params.page } });
 
   return {

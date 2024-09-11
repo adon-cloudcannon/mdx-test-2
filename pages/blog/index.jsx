@@ -17,7 +17,7 @@ function BlogIndex({ page, posts, pageNo, pageSlug }) {
 export default BlogIndex
 
 export async function getStaticProps({ params }) {
-  const page = await filer.getItem('blog.md', { folder: 'pages' });
+  const page = await filer.getItem('blog.mdx', { folder: 'pages' });
   const posts = await filer.getItems('posts', { excerpt: true, sortKey: 'date'});
   const paginatedPosts = await filer.getPaginatedItems('posts', { sortKey: 'date', pagination: {size: page.data?.pagination?.size || 9, page: 1} });
 	

@@ -17,7 +17,7 @@ function BlogPages({ page, posts, pageNo, headline, pageSlug}) {
 export default BlogPages
 
 export async function getStaticPaths() {
-  const page = await filer.getItem('blog.md', { folder: 'pages' });
+  const page = await filer.getItem('blog.mdx', { folder: 'pages' });
 
   const posts = await filer.getItems('posts', { excerpt: false, sortKey: 'date' })
   const tags = {};
@@ -49,7 +49,7 @@ export async function getStaticPaths() {
 }
 export async function getStaticProps({ params }) {
   const tag = params.slug;
-  const page = await filer.getItem('blog.md', { folder: 'pages' });
+  const page = await filer.getItem('blog.mdx', { folder: 'pages' });
   const paginatedPosts = await filer.getPaginatedItems('posts', {
     sortKey: 'date',
     filter: (item) => item.data.tags.includes(tag),

@@ -33,7 +33,7 @@ export async function getStaticPaths() {
 }
 export async function getStaticProps({ params }) {
   const tag = params.slug;
-  const page = await filer.getItem('blog.md', { folder: 'pages' });
+  const page = await filer.getItem('blog.mdx', { folder: 'pages' });
   const filteredPosts = await filer.getPaginatedItems('posts', {
     excerpt: true,
     filter: (item) => item.data.tags.includes(tag),

@@ -15,7 +15,7 @@ function HomePage({ page }) {
 export default HomePage
   
 export async function getStaticProps({ params }) {
-	const page = await filer.getItem('index.md', { folder: 'pages' });
+	const page = await filer.getItem('index.mdx', { folder: 'pages' });
 	return {
 		props: {
 			page: JSON.parse(JSON.stringify(page))

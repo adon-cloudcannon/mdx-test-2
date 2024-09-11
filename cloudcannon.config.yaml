@@ -18,7 +18,7 @@ collections_config:
     schemas:
       default:
         name: New Page
-        path: schemas/page.md
+        path: schemas/page.mdx
   blog:
     path: content/posts
     output: true
@@ -28,7 +28,7 @@ collections_config:
       - visual
     schemas:
       default:
-        path: schemas/post.md
+        path: schemas/post.mdx
 _inputs:
   date:
     instance_value: now
