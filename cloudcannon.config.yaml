@@ -3,6 +3,8 @@ paths:
   data: data
   static: public
   uploads: public/uploads
+_enabled_editors:
+  - visual
 collections_config:
   data:
     path: data
